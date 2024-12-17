@@ -151,19 +151,23 @@ second_problem :: proc(data: string) -> int {
 	num := parse[k][0] * parse[k][1]
 	total = total + num
     }
-    fmt.println(parse)
     
     return total
 }
 
 main :: proc() {
     // file, _ := os.read_entire_file_from_filename("./test.txt")
-    // file, _ := os.read_entire_file_from_filename("./sample.txt")
-    // file, _ := os.read_entire_file_from_filename("./sample2.txt")
-    file, _ := os.read_entire_file_from_filename("./input.txt")
-    data := string(file)
+    sample, _ := os.read_entire_file_from_filename("./sample.txt")
+    sample2, _ := os.read_entire_file_from_filename("./sample2.txt")
+    input, _ := os.read_entire_file_from_filename("./input.txt")
+    data := string(input)
+    sample_data := string(sample)
+    sample2_data := string(sample2)
 
-    fmt.println(second_problem(data))
+    fmt.println("sample 1 problem 1: ", first_problem(sample_data))
+    fmt.println("input problem 1: ", first_problem(data))
+    fmt.println("sample 2 problem 2: ", second_problem(sample2_data))
+    fmt.println("input problem 2: ", second_problem(data))
 
     
 }
